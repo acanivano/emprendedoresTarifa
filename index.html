@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Web App de emprendedores</title>
+
+    <!-- Configure dojo for asynchronous module loading -->
+    <script>
+        var dojoConfig = {
+            async: true
+        };
+
+        var localesOSM = "https://localhost:6443/arcgis/rest/services/Emprendedores/Emprendedores/MapServer/2"
+    </script>
+
+    <!-- Reference libraries. The first CSS is a Dojo theme that gives dijits a consistent style. -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css">
+    <link rel="stylesheet" href="css/workwiththemap.css"/>
+    <script src="http://js.arcgis.com/3.12/"></script>
+    <script src="js/map.js"></script>
+
+
+</head>
+
+<body class="nihilo">
+<div id="bcMain" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', liveSplitters:'true'">
+    <div id="cpLeading" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:'true', region:'leading'">
+        <!-- Create Select -->
+        <label for="">¿Que tipo de local le gustaria montar? </label>
+
+    <select name="select1" data-dojo-type="dijit/form/Select" id="select>
+            <option value="Artesania">Artesania</option>
+            <option value="Banco" selected="selected">Banco</option>
+            <option value="Bar">Bar</option>
+            <option value="Bodega">Bodega</option>
+            <option value="Boutique">Boutique</option>
+            <option value="Discoteca">Discoteca</option>
+            <option value="Farmacia">Farmacia</option>
+            <option value="fast_food">Comida Rapida</option>
+            <option value="Floristeria">Floristeria</option>
+            <option value="Gasolinera">Gasolinera</option>
+            <option value="Joyería">Joyería</option>
+            <option value="Lavandería">Lavandería</option>
+            <option value="Panaderia">Panaderia</option>
+            <option value="Peluqería">Peluqería</option>
+            <option value="Restaurante">Restaurante</option>
+            <option value="Supermercado">Supermercado</option>
+            <option value="Veterinario">Veterinario</option>
+            <option value="Videoclub">Videoclub</option>
+            <option value="Zapateria">Zapateria</option>
+
+    </select>  
+    </div>
+    <div id="cpCenter" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+       <div id="HomeButton"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
