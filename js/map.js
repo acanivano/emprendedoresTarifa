@@ -42,7 +42,7 @@ require([
             // Parse DOM nodes decorated with the data-dojo-type attribute
             parser.parse();
 
-            
+
         // Create the map
             mapMain = new Map("cpCenter", {
                 basemap: "topo",
@@ -59,19 +59,18 @@ require([
             map: mapMain,
             scalebarUnit: "dual"
             });//scalebar
-
+            debugger
 
             on(select, "change", function(evt){
             // Recojo el valor del select
                 var SeleccLocal = dom.byId("select").value;
             // Muestro el valor seleccionado del select en el id=opcion
-                var muestraopcion = dom.byId("opcion");
-              muestraopcion.innerHTML = SeleccLocal;
+              alert("Valor del select es: " + SeleccLocal);
 
             //Define a query, after that I will create a Feature Layer
                 var query = new Query();
                 query.where = "Tienda = " + "SeleccLocal";
-                query.returnGeometry = true;   
+                query.returnGeometry = true;
 
 
             //create a new symbol
@@ -80,9 +79,9 @@ require([
                 new Color([255,0,0]), 1),
                 new Color([0,255,0,0.25]));
 
-            
+
             //Create a FeatureLayer with a query selection
-                var localOSM = new FeatureLayer(locales);
+                var localOSM = new FeatureLayer(localesOSM);
                 localOSM.selectFeatures(query,FeatureLayer.SELECTION_NEW);
 
 
@@ -90,16 +89,9 @@ require([
                 localOSM.setSelectionSymbol(marker);
 
             //add Feature Layer
-                map.addLayer(localOSM);
+                mapMain.addLayer(localOSM);
 
-            });//on select      
-                       
+            });//on select
+
         });//ready
-});//requiere        
-
-       
-                
-
-          
-
-       
+});//requiere
